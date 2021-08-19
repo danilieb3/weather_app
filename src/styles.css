@@ -28,3 +28,10 @@ table {
 #currentCity {
   font-weight: bolder;
 }
+
+p {
+  position: relative;
+  left: 72px;
+  padding: 10px;
+  font-size: 14px;
+}
