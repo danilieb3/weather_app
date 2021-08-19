@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>What's the weather like?</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,600;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card w-50">
+        <div class="card-body">
+          <div class="container">
+            <form class="row g-4" id="searchCityForm">
+              <div class="col-5">
+                <input
+                  type="text"
+                  placeholder="Enter a city"
+                  class="form-control"
+                  id="enterCity"
+                  autofocus
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary mb-4"
+                />
+              </div>
+              <div class="col-1">
+                <input
+                  type="submit"
+                  id="currentLocationButton"
+                  value="Current location📍"
+                  class="btn btn-info mb-4"
+                />
+              </div>
+            </form>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-6" id="currentCity">Vienna</div>
+            </div>
+            <div class="row">
+              <div class="col-6" id="dateToday"></div>
+            </div>
+          </div>
+          <br />
+          <div class="current_weather" id="currentWeather">
+            <span>☀</span>
+            <span class="temperature" id="temperature">19</span>
+            <span class="units">
+              <a href="#" id="celciusLink">°C</a>
+              <span>|</span>
+              <a href="#" id="fahrenheitLink">°F</a>
+            </span>
+          </div>
+
+          <table class="table-responsive table-borderless table-sm">
+            <table style="width: 180px">
+              <thead>
+                <tr>
+                  <th scope="col-2" id="weatherdescription">SUNNY</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Wind:</th>
+                  <td id="wind">15</td>
+                </tr>
+                <tr>
+                  <th scope="row">Humidity level:</th>
+                  <td scope="row" id="humidity">44%</td>
+                </tr>
+              </tbody>
+            </table>
+          </table>
+
+          <div class="container_weather">
+            <div class="row">
+              <div class="col-2">Sat</div>
+              <div class="col-2">Sun</div>
+              <div class="col-2">Mon</div>
+              <div class="col-2">Tue</div>
+              <div class="col-2">Wed</div>
+            </div>
+          </div>
+          <div class="container_weather">
+            <div class="row">
+              <div class="col-2">☀</div>
+              <div class="col-2">☀</div>
+              <div class="col-2">🌩</div>
+              <div class="col-2">☀</div>
+              <div class="col-2">🌧</div>
+            </div>
+          </div>
+          <div class="container_weather">
+            <div class="row">
+              <div class="col-2"><strong>32°</strong>|24°</div>
+              <div class="col-2"><strong>30°</strong>|22°</div>
+              <div class="col-2"><strong>28°</strong>|20°</div>
+              <div class="col-2"><strong>27°</strong>|22°</div>
+              <div class="col-2"><strong>23°</strong>|17°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>

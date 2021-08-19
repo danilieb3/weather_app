@@ -1,0 +1,30 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.container_weather {
+  text-align: center;
+  position: relative;
+  width: 630px;
+}
+table {
+  position: relative;
+  left: 280px;
+  top: -30px;
+  border-collapse: separate;
+  border-spacing: 5px;
+}
+.current_weather {
+  position: relative;
+  left: 30px;
+  top: 40px;
+  font-size: 35px;
+}
+#celciusLink {
+  text-decoration: none;
+}
+#fahrenheitLink {
+  text-decoration: none;
+}
+#currentCity {
+  font-weight: bolder;
+}
