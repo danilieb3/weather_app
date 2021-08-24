@@ -43,3 +43,10 @@ table {
   border-radius: 4px;
   margin-top: 10px;
 }
+.currentlyDisplaying {
+  cursor: default;
+  color: #212529;
+}
+.currentlyDisplaying:hover {
+  color: #212529;
+}

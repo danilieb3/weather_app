@@ -26,6 +26,8 @@ function showCityTemp(response) {
   let currentLocation = document.querySelector("#currentCity");
   currentLocation.innerHTML = response.data.name;
 
+  currentCelciusTemp = response.data.main.temp;
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -81,18 +83,23 @@ document.getElementById(
   "dateToday"
 ).innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
-//ignore for now
-function displayTempCelcisus(event) {
+function displayTempCelcius(event) {
   event.preventDefault();
-  document.getElementById("temperature").innerHTML = 19;
+  fahrenheitLink.classList.remove("currentlyDisplaying");
+  celciusLink.classList.add("currentlyDisplaying");
+  document.getElementById("temperature").innerHTML =
+    Math.round(currentCelciusTemp);
 }
+
 let currentCelciusTemp = document.querySelector("#celciusLink");
-currentCelciusTemp.addEventListener("click", displayTempCelcisus);
+currentCelciusTemp.addEventListener("click", displayTempCelcius);
 
 function displayTempFahrenheit(event) {
   event.preventDefault();
+  celciusLink.classList.remove("currentlyDisplaying");
+  fahrenheitLink.classList.add("currentlyDisplaying");
   document.getElementById("temperature").innerHTML = Math.round(
-    (19 * 9) / 5 + 32
+    (currentCelciusTemp * 9) / 5 + 32
   );
 }
 let currentFahrenheitTemp = document.querySelector("#fahrenheitLink");
