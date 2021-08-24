@@ -21,7 +21,7 @@ table {
 }
 
 .current_weather img {
-  size: 40px;
+  width: 60px;
 }
 #celciusLink {
   text-decoration: none;
