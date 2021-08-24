@@ -11,6 +11,7 @@ function showSearchCity(event) {
   let apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiCity).then(showCityTemp);
 }
+
 function showCityTemp(response) {
   let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = Math.round(response.data.main.temp);
@@ -18,13 +19,13 @@ function showCityTemp(response) {
   let dataCurrentHumidity = Math.round(response.data.main.humidity);
   currentHumidity.innerHTML = `${dataCurrentHumidity}%`;
   let currentWind = document.querySelector("#wind");
-  currentWind.innerHTML = `${response.data.wind.speed} m/s`;
+  currentWind.innerHTML = `${response.data.wind.speed} km/h`;
   let currentweatherdescription = document.querySelector("#weatherdescription");
   currentweatherdescription.innerHTML =
     response.data.weather[0].description.toUpperCase();
   let currentLocation = document.querySelector("#currentCity");
   currentLocation.innerHTML = response.data.name;
-  console.log(response.data.weather[0].icon);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -32,6 +33,11 @@ function showCityTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
+function search(city) {
+  let apiCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiCity).then(showCityTemp);
+}
+search("Vienna");
 
 function retrievePosition(position) {
   let latitude = position.coords.latitude;

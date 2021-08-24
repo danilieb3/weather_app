@@ -34,6 +34,7 @@
                   placeholder="Enter a city"
                   class="form-control"
                   id="enterCity"
+                  autocomplete="off"
                   autofocus
                 />
               </div>
@@ -57,7 +58,7 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-6" id="currentCity">Vienna</div>
+              <div class="col-6" id="currentCity"></div>
             </div>
             <div class="row">
               <div class="col-6" id="dateToday"></div>
@@ -67,12 +68,12 @@
           <div class="current_weather" id="currentWeather">
             <img
               id="icon"
-              src="https://openweathermap.org/img/wn/01d.png"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
               alt="clear"
               class="float-left"
             />
 
-            <span class="temperature" id="temperature">19</span>
+            <span class="temperature" id="temperature"></span>
             <span class="units">
               <a href="#" id="celciusLink">°C</a>
               <span>|</span>
@@ -81,20 +82,20 @@
           </div>
 
           <table class="table-responsive table-borderless table-sm">
-            <table style="width: 180px">
+            <table style="width: 220px">
               <thead>
                 <tr>
-                  <th scope="col-2" id="weatherdescription">SUNNY</th>
+                  <th colspan="2" id="weatherdescription"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Wind:</th>
-                  <td id="wind">15</td>
+                  <td id="wind"></td>
                 </tr>
                 <tr>
                   <th scope="row">Humidity level:</th>
-                  <td scope="row" id="humidity">44%</td>
+                  <td scope="row" id="humidity"></td>
                 </tr>
               </tbody>
             </table>
