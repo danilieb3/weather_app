@@ -24,6 +24,13 @@ function showCityTemp(response) {
     response.data.weather[0].description.toUpperCase();
   let currentLocation = document.querySelector("#currentCity");
   currentLocation.innerHTML = response.data.name;
+  console.log(response.data.weather[0].icon);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].icon);
 }
 
 function retrievePosition(position) {

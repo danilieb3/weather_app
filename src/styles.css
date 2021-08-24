@@ -15,9 +15,13 @@ table {
 }
 .current_weather {
   position: relative;
-  left: 30px;
+  left: 20px;
   top: 40px;
   font-size: 35px;
+}
+
+.current_weather img {
+  size: 40px;
 }
 #celciusLink {
   text-decoration: none;
