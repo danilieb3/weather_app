@@ -28,6 +28,9 @@ function showCityTemp(response) {
 
   currentCelciusTemp = response.data.main.temp;
 
+  fahrenheitLink.classList.remove("currentlyDisplaying");
+  celciusLink.classList.add("currentlyDisplaying");
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
